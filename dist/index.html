@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Seeded Procedural Music Generator</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<header id="intro">
+  <section>
+    <h1>Procedurally Generated Music</h1>
+    <p>
+      This will infinitely generate a random song based on the <em>seed</em> that you provide it with. 
+      Procedural generation ensures that the song will always be the exact 
+      same song for the seed data you provide, but will be unique to any other seed.
+    </p>
+    <p>
+      Type anything into the input below and hit "Load" to generate and hear your song.
+    </p>
+    <input id="seed" type="text" placeholder="Seed" />
+    <button id="load">Load</button><br>
+    <small>
+      You can download a MIDI file of whatever you have generated in the browser when you hit "Pause". 
+      To import into Ableton, you may need to rename the extension to ".mid". 
+      The conversion is handled by ABCjs, and the midi accuracy varies with different software.
+    </small>
+  </section>    
+</header>
+
+<main>
+  <button id="play">Play</button><br>
+  <p id="midi"></p>
+  <section id="staff-container">
+    <div id="staff"></div>
+  </section>
+</main>
+<!-- partial -->
+  <script src='//cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.0/seedrandom.min.js'></script>
+<script src='//s3-us-west-2.amazonaws.com/s.cdpn.io/111863/Tone.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/abcjs/3.1.1/abcjs_basic-min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
